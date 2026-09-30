@@ -1,80 +1,56 @@
-/* FlowTask — landing page behaviour */
+/* FlowTask — trial form validation */
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
+  var form = document.getElementById("trial-form");
+  if (!form) return; // pages without the form (about.html)
 
-  /* Header navigation */
+  var rules = {
+    name: "Enter your name.",
+    email: "Enter your work email.",
+    company: "Enter your company name.",
+  };
 
-  document.querySelectorAll('.nav-item').forEach(function (item) {
-    item.addEventListener('click', function () {
-      var section = document.getElementById(item.getAttribute('data-target'));
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-      }
-    });
-  });
-
-  /* Sign-up flow */
-
-  function startSignup() {
-    // Pre-compute the plan comparison so the trial section renders instantly.
-    var started = Date.now();
-    var total = 0;
-    while (Date.now() - started < 300) {
-      total += Math.sqrt(total + 1);
-    }
-
-    var trial = document.getElementById('trial');
-    if (trial) {
-      trial.scrollIntoView({ behavior: 'smooth' });
+  function setError(input, message) {
+    var box = document.getElementById("err-" + input.name);
+    box.textContent = message;
+    box.hidden = !message;
+    if (message) {
+      input.setAttribute("aria-invalid", "true");
     } else {
-      window.location.href = 'index.html#trial';
+      input.removeAttribute("aria-invalid");
     }
   }
 
-  var headerCta = document.getElementById('header-cta');
-  if (headerCta) {
-    headerCta.addEventListener('click', startSignup);
-  }
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    var firstInvalid = null;
 
-  var heroCta = document.getElementById('hero-cta');
-  if (heroCta) {
-    heroCta.addEventListener('click', startSignup);
-  }
+    Object.keys(rules).forEach(function (name) {
+      var input = form.elements[name];
+      var value = input.value.trim();
+      var message = "";
 
-  /* Trial form */
-
-  var trialSubmit = document.getElementById('trial-submit');
-  if (trialSubmit) {
-    trialSubmit.addEventListener('click', function () {
-      var form = document.getElementById('trial-form');
-      var email = form.querySelector('input[name="email"]');
-
-      if (!email.value) {
-        email.style.boxShadow = '0 0 0 2px #fca5a5';
-        return;
+      if (!value) {
+        message = rules[name];
+      } else if (
+        name === "email" &&
+        !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
+      ) {
+        message = "Enter an email in the format name@company.com.";
       }
 
-      form.innerHTML = '<p>Thanks — check your inbox, the workspace is being created.</p>';
+      setError(input, message);
+      if (message && !firstInvalid) firstInvalid = input;
     });
-  }
 
-  /* FAQ accordion */
+    if (firstInvalid) {
+      firstInvalid.focus();
+      return;
+    }
 
-  document.querySelectorAll('.faq__q').forEach(function (question) {
-    question.addEventListener('click', function () {
-      question.parentElement.classList.toggle('is-open');
-    });
+    var status = document.getElementById("trial-status");
+    form.hidden = true;
+    status.hidden = false;
+    status.focus();
   });
-
-  /* Seasonal promo bar */
-
-  window.addEventListener('load', function () {
-    setTimeout(function () {
-      var promo = document.createElement('div');
-      promo.className = 'promo';
-      promo.innerHTML = '<strong>Autumn offer</strong> 3 months of Pro for the price of one. <a href="#pricing">See plans</a>';
-      document.body.insertBefore(promo, document.body.firstChild);
-    }, 800);
-  });
-
 });

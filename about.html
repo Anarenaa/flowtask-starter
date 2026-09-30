@@ -1,108 +1,148 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FlowTask</title>
+  <title>About FlowTask</title>
+  <meta name="description" content="Meet the team behind FlowTask: twelve people in Kyiv, Lisbon and Toronto building one task board with automations and reporting.">
+  <link rel="canonical" href="https://flowtask-starter.vercel.app/about.html">
+  <meta property="og:site_name" content="FlowTask">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="About FlowTask — the team, how we work and where we are">
+  <meta property="og:description" content="Meet the team behind FlowTask: twelve people in Kyiv, Lisbon and Toronto building one task board with automations and reporting.">
+  <meta property="og:url" content="https://flowtask-starter.vercel.app/about.html">
+  <meta property="og:image" content="https://flowtask-starter.vercel.app/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="FlowTask board view with four columns of task cards">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="img/logo.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </head>
+
 <body>
 
-<header class="site-header">
-  <div class="site-header__inner">
-    <img class="logo" src="img/logo.svg" alt="FlowTask" width="132" height="28">
+  <header class="site-header">
+    <div class="site-header__inner">
+      <img class="logo" src="img/logo.svg" alt="FlowTask" width="132" height="28">
 
-    <nav class="nav" role="navigation" aria-label="Main navigation">
-      <div class="nav-item">Product</div>
-      <div class="nav-item">Pricing</div>
-      <div class="nav-item">FAQ</div>
-      <div class="nav-item">Trial</div>
-    </nav>
+      <nav class="nav" aria-label="Main navigation">
+        <ul class="nav__list" role="list"> <!-- role="list" for VoiceOver in Safari-->
+          <li class="nav-item"><a class="link-quiet" href="index.html#features">Product</a></li>
+          <li class="nav-item"><a class="link-quiet" href="index.html#pricing">Pricing</a></li>
+          <li class="nav-item"><a class="link-quiet" href="index.html#faq">FAQ</a></li>
+          <li class="nav-item"><a class="link-quiet" href="index.html#trial">Trial</a></li>
+        </ul>
+      </nav>
 
-    <div class="site-header__actions">
-      <a class="link-quiet" href="index.html">Home</a>
-      <a class="link-quiet" href="#" aria-label="Sign in">Sign in</a>
-      <button class="btn btn--primary" role="button" aria-label="Get started button" id="header-cta">Get started</button>
+      <div class="site-header__actions">
+        <a class="link-quiet" href="index.html">Home</a>
+        <a class="link-quiet" href="#">Sign in</a>
+        <a class="btn btn--primary" href="index.html#trial">Get started</a>
+      </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section class="page-head">
+  <main>
+    <section class="page-head">
+      <div class="shell">
+        <h1>About FlowTask</h1>
+        <p class="muted">A small team, one product, and a strong opinion about status meetings.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell prose">
+        <p>FlowTask started in 2023 as an internal board for a six-person agency that had outgrown a
+          shared spreadsheet and could not face another migration. Two years later it is the only
+          thing that team runs its week on, and around four thousand other teams do the same.</p>
+
+        <h2>What we build</h2>
+        <p>One product: a task board with automations and reporting attached. We do not sell a chat
+          app, a wiki or a time tracker, and we integrate with the ones you already pay for instead
+          of asking you to replace them.</p>
+
+        <h2>How we work</h2>
+        <p>Everything ships behind a flag, every change is reversible for thirty days, and support is
+          answered by the people who wrote the code. There is no tier of the product that unlocks a
+          faster reply.</p>
+
+        <h2>Where we are</h2>
+        <p>Twelve people across Kyiv, Lisbon and Toronto. Data lives in the EU by default, and
+          Enterprise workspaces can pin it to a region of their choosing.</p>
+
+        <h2>Talk to us</h2>
+        <p class="soft">Write to hello@flowtask.example — we answer within one working day, and the
+          reply comes from a person rather than a queue.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
     <div class="shell">
-      <h1>About FlowTask</h1>
-      <p class="muted">A small team, one product, and a strong opinion about status meetings.</p>
+      <div class="site-footer__cols">
+        <div>
+          <img src="img/logo.svg" alt="FlowTask" width="132" height="28">
+          <p class="muted">Project management for teams that ship every week.</p>
+          <div class="social">
+            <a href="#" aria-label="FlowTask on X">
+              <svg class="icon" viewBox="0 0 18 18" aria-hidden="true">
+                <path d="M10.6 7.6 15.3 2h-1.5l-4 4.9L6.4 2H2l5 7.3L2 15.5h1.5l4.2-5.2 3.5 5.2H16l-5.4-7.9Z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" aria-label="FlowTask on GitHub">
+              <svg class="icon" viewBox="0 0 18 18" aria-hidden="true">
+                <path
+                  d="M9 1.5a7.5 7.5 0 0 0-2.4 14.6c.4.1.5-.2.5-.4v-1.4c-2 .4-2.5-.5-2.7-1-.1-.3-.6-1-1-1.2-.3-.2-.8-.6 0-.6.7 0 1.2.7 1.4 1 .8 1.3 2 1 2.5.7.1-.6.3-1 .6-1.2-1.8-.2-3.7-.9-3.7-4 0-.9.3-1.6.8-2.2-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8a7.4 7.4 0 0 1 4 0c1.5-1 2.2-.8 2.2-.8.5 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.2 0 3.1-1.9 3.8-3.7 4 .3.3.6.8.6 1.6v2.3c0 .2.1.5.5.4A7.5 7.5 0 0 0 9 1.5Z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+            <a href="#" aria-label="FlowTask on LinkedIn">
+              <svg class="icon" viewBox="0 0 18 18" aria-hidden="true">
+                <path
+                  d="M3.4 6.4h2.8v9H3.4v-9Zm1.4-4.2a1.6 1.6 0 1 1 0 3.2 1.6 1.6 0 0 1 0-3.2ZM8 6.4h2.7v1.2h.1c.4-.7 1.3-1.4 2.7-1.4 2.9 0 3.4 1.8 3.4 4.2v4.9h-2.8v-4.4c0-1 0-2.4-1.5-2.4s-1.7 1.1-1.7 2.3v4.5H8v-9Z"
+                  fill="currentColor" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Product</h3>
+          <ul role="list">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="index.html#pricing">Pricing</a></li>
+            <li><a href="index.html#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Company</h3>
+          <ul role="list">
+            <li><a href="about.html" aria-current="page">About</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h3 class="site-footer__title">Resources</h3>
+          <ul role="list">
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Status</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="legal">© 2026 FlowTask. A fictional product used for coursework.</p>
     </div>
-  </section>
-
-  <section class="section">
-    <div class="shell prose">
-      <p>FlowTask started in 2023 as an internal board for a six-person agency that had outgrown a
-        shared spreadsheet and could not face another migration. Two years later it is the only
-        thing that team runs its week on, and around four thousand other teams do the same.</p>
-
-      <h2>What we build</h2>
-      <p>One product: a task board with automations and reporting attached. We do not sell a chat
-        app, a wiki or a time tracker, and we integrate with the ones you already pay for instead
-        of asking you to replace them.</p>
-
-      <h2>How we work</h2>
-      <p>Everything ships behind a flag, every change is reversible for thirty days, and support is
-        answered by the people who wrote the code. There is no tier of the product that unlocks a
-        faster reply.</p>
-
-      <h2>Where we are</h2>
-      <p>Twelve people across Kyiv, Lisbon and Toronto. Data lives in the EU by default, and
-        Enterprise workspaces can pin it to a region of their choosing.</p>
-
-      <h2>Talk to us</h2>
-      <p class="soft">Write to hello@flowtask.example — we answer within one working day, and the
-        reply comes from a person rather than a queue.</p>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="shell">
-    <div class="site-footer__cols">
-      <div>
-        <img src="img/logo.svg" alt="FlowTask" width="132" height="28">
-        <p class="muted">Project management for teams that ship every week.</p>
-      </div>
-
-      <div>
-        <div class="site-footer__title">Product</div>
-        <ul>
-          <li><a href="index.html#features">Features</a></li>
-          <li><a href="index.html#pricing">Pricing</a></li>
-          <li><a href="index.html#faq">FAQ</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="site-footer__title">Company</div>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <div class="site-footer__title">Resources</div>
-        <ul>
-          <li><a href="#">Docs</a></li>
-          <li><a href="#">Changelog</a></li>
-          <li><a href="#">Status</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <p class="legal">© 2026 FlowTask. A fictional product used for coursework.</p>
-  </div>
-</footer>
+  </footer>
 
 </body>
+
 </html>
